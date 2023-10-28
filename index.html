@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grilla de 7x7</title>
+    <style>
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            grid-template-rows: repeat(7, 1fr);
+            gap: 2px;
+            width: 500px; /* Ajusta el tamaño según tus necesidades */
+            height: 500px;
+        }
+
+        .grid-item {
+            width: 100%;
+            height: 100%;
+            background-color: lightgray;
+        }
+        .center {
+            background-color: purple;
+        }
+
+        .top-left, .top-right, .bottom-left, .bottom-right {
+            background-color: purple;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid">
+        <div class="grid-item corner top-left"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item corner top-right"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item center"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item corner bottom-left"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item corner bottom-right"></div>
+    </div>
+    <script>
+        const gridItems = document.querySelectorAll('.grid-item');
+
+        gridItems.forEach(item => {
+            let currentColorIndex = 0;
+            const colors = ['red', 'green', 'yellow','purple','lightgrey'];
+
+            item.addEventListener('click', () => {
+                const nextColorIndex = (currentColorIndex + 1) % colors.length;
+                const nextColor = colors[nextColorIndex];
+                item.style.backgroundColor = nextColor;
+                currentColorIndex = nextColorIndex;
+            });
+        });
+    </script>
+</body>
+</html>
